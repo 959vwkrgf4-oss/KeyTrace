@@ -1,15 +1,12 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="KeyTrace certificate inventory dashboard"
-    />
-    <title>KeyTrace — Certificate Inventory</title>
-    <style>
-      :root {
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="KeyTrace certificate inventory dashboard" />
+  <title>KeyTrace — Certificate Inventory</title>
+  <style>
+:root {
         --page: #f6f8fb;
         --surface: #fff;
         --text: #172033;
@@ -184,24 +181,26 @@
         padding-top: 18px;
       }
 
-      .avatar {
+      .profile .avatar {
         display: grid;
         width: 36px;
         height: 36px;
+        flex: 0 0 36px;
         place-items: center;
         border-radius: 50%;
         background: #dce9ff;
         color: #2559b9;
         font-size: 11px;
         font-weight: 700;
+        line-height: 1;
       }
 
       .profile div:nth-child(2) {
         flex: 1;
       }
 
-      .profile strong,
-      .profile span {
+      .profile div:nth-child(2) strong,
+      .profile div:nth-child(2) span {
         display: block;
       }
 
@@ -1306,10 +1305,12 @@
           gap: 12px;
         }
       }
-    </style>
-  </head>
-  <body>
-    <svg width="0" height="0" style="position: absolute">
+
+
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" style="position: absolute">
       <symbol id="i-grid" viewBox="0 0 24 24">
         <rect x="3" y="3" width="7" height="7" rx="1" />
         <rect x="14" y="3" width="7" height="7" rx="1" />
@@ -1360,78 +1361,27 @@
         <path d="m9 18 6-6-6-6" />
       </symbol>
     </svg>
-
-    <div class="app">
-      <aside class="sidebar" id="sidebar">
-        <div class="brand">
-          <span class="brand-mark"><i></i><i></i><i></i></span>
-          KeyTrace
-        </div>
-        <div class="workspace-label">WORKSPACE</div>
-        <nav>
-          <button class="nav-button active" data-page="dashboard">
-            <svg class="icon"><use href="#i-grid"></use></svg>
-            Dashboard
-          </button>
-          <button class="nav-button" data-page="inventory">
-            <svg class="icon"><use href="#i-certificate"></use></svg>
-            Certificate inventory
-          </button>
-          <button class="nav-button">
-            <svg class="icon"><use href="#i-file"></use></svg>
-            Certificate requests
-          </button>
-          <button class="nav-button">
-            <svg class="icon"><use href="#i-refresh"></use></svg>
-            Renewals
-          </button>
-          <button class="nav-button">
-            <svg class="icon"><use href="#i-alert"></use></svg>
-            Alerts <b>4</b>
-          </button>
-          <button class="nav-button">
-            <svg class="icon"><use href="#i-file"></use></svg>
-            Reports
-          </button>
-          <button class="nav-button">
-            <svg class="icon"><use href="#i-search"></use></svg>
-            Audit log
-          </button>
-          <button class="nav-button" data-page="settings">
-            <svg class="icon"><use href="#i-settings"></use></svg>
-            Configuration
-          </button>
-        </nav>
-        <div class="profile">
-          <span class="avatar">AR</span>
-          <div><strong>Alex Rivera</strong><span>Administrator</span></div>
-          <svg class="icon"><use href="#i-chevron"></use></svg>
-        </div>
-      </aside>
-
-      <main class="main">
-        <header class="topbar">
-          <button class="menu-button" id="menuButton" aria-label="Open menu">
-            <svg class="icon"><use href="#i-menu"></use></svg>
-          </button>
-          <div class="topbar-title">
-            <strong id="currentPage">Dashboard</strong>
-            <span>Production environment</span>
-          </div>
-          <div class="top-actions">
-            <div class="global-search">
-              <svg class="icon"><use href="#i-search"></use></svg>
-              <span>Search certificates</span><kbd>⌘ K</kbd>
-            </div>
-            <button class="icon-button" aria-label="Notifications">
-              <svg class="icon"><use href="#i-bell"></use></svg>
-            </button>
-          </div>
-        </header>
-
-        <div class="content">
-          <section class="page active" id="dashboard">
-            <div class="page-heading">
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+  <div class="brand"><span class="brand-mark"><i></i><i></i><i></i></span>KeyTrace</div>
+  <div class="workspace-label">WORKSPACE</div>
+  <nav>
+    <button class="nav-button active" data-page="dashboard"><svg class="icon"><use href="#i-grid"></use></svg>Dashboard</button>
+    <button class="nav-button" data-page="inventory"><svg class="icon"><use href="#i-certificate"></use></svg>Certificate inventory</button>
+    <button class="nav-button"><svg class="icon"><use href="#i-file"></use></svg>Certificate requests</button>
+    <button class="nav-button"><svg class="icon"><use href="#i-refresh"></use></svg>Renewals</button>
+    <button class="nav-button"><svg class="icon"><use href="#i-alert"></use></svg>Alerts <b>4</b></button>
+    <button class="nav-button"><svg class="icon"><use href="#i-file"></use></svg>Reports</button>
+    <button class="nav-button"><svg class="icon"><use href="#i-search"></use></svg>Audit log</button>
+    <button class="nav-button" data-page="settings"><svg class="icon"><use href="#i-settings"></use></svg>Configuration</button>
+  </nav>
+  <div class="profile"><span class="avatar">JB</span><div><strong>John Baker</strong><span>Administrator</span></div><svg class="icon"><use href="#i-chevron"></use></svg></div>
+</aside>
+    <main class="main"><header class="topbar">
+  <button class="menu-button" id="menuButton" aria-label="Open menu"><svg class="icon"><use href="#i-menu"></use></svg></button>
+  <div class="topbar-title"><strong id="currentPage">Dashboard</strong><span>Production environment</span></div>
+  <div class="top-actions"><div class="global-search"><svg class="icon"><use href="#i-search"></use></svg><span>Search certificates</span><kbd>⌘ K</kbd></div><button class="icon-button" aria-label="Notifications"><svg class="icon"><use href="#i-bell"></use></svg></button></div>
+</header><div class="content"><section class="page active" id="dashboard"><div class="page-heading">
               <div>
                 <p class="eyebrow">OVERVIEW</p>
                 <h1>Good morning, Alex</h1>
@@ -1498,7 +1448,7 @@
                   <div class="activity-row"><span>Discovered</span><strong>api.keytrace.io</strong><span>Discovery scan</span><span>09:42</span></div>
                   <div class="activity-row"><span>Renewed</span><strong>vpn.keytrace.io</strong><span>Jamie Turner</span><span>08:55</span></div>
                   <div class="activity-row"><span>Deployed</span><strong>portal.keytrace.io</strong><span>Auto-deploy</span><span>08:15</span></div>
-                  <div class="activity-row"><span>Owner assigned</span><strong>mobile.keytrace.io</strong><span>Alex Rivera</span><span>Yesterday</span></div>
+                  <div class="activity-row"><span>Owner assigned</span><strong>mobile.keytrace.io</strong><span>John Baker</span><span>Yesterday</span></div>
                 </div>
               </article>
 
@@ -1511,11 +1461,8 @@
                   <button class="quick-action"><span class="row-icon"><svg class="icon"><use href="#i-file"></use></svg></span><span><strong>Generate report</strong><small>Export inventory data</small></span><svg class="icon"><use href="#i-chevron"></use></svg></button>
                 </div>
               </article>
-            </div>
-          </section>
-
-          <section class="page" id="inventory">
-            <div class="page-heading">
+            </div></section>
+<section class="page" id="inventory"><div class="page-heading">
               <div>
                 <p class="eyebrow">CERTIFICATES</p>
                 <h1>Certificate inventory</h1>
@@ -1548,11 +1495,8 @@
                 <span id="resultCount">Showing 7 certificates</span>
                 <div class="pagination"><button class="active">1</button><button>2</button><button>3</button><button>Next</button></div>
               </div>
-            </article>
-          </section>
-
-          <section class="page" id="settings">
-            <div class="page-heading">
+            </article></section>
+<section class="page" id="settings"><div class="page-heading">
               <div>
                 <p class="eyebrow">ADMINISTRATION</p>
                 <h1>Configuration</h1>
@@ -1604,130 +1548,69 @@
                   </div>
                 </article>
               </div>
-            </div>
-          </section>
-        </div>
-      </main>
-      <button class="scrim" id="scrim" aria-label="Close menu"></button>
-      <div class="toast" id="toast">Changes saved successfully.</div>
-    </div>
+            </div></section></div></main>
+    <button class="scrim" id="scrim" aria-label="Close menu"></button>
+    <div class="toast" id="toast">Changes saved successfully.</div>
+  </div>
+  <script>
+const certificates = [
+  ["api.keytrace.io", "Platform", "TLS", "DigiCert", "Nov 18, 2026", "16 days", "Expiring soon"],
+  ["payments.keytrace.io", "Payments", "mTLS", "Internal CA", "Dec 04, 2026", "32 days", "Expiring soon"],
+  ["admin.keytrace.io", "Security", "TLS", "Let's Encrypt", "May 09, 2028", "554 days", "Active"],
+  ["mobile.keytrace.io", "Mobile", "TLS", "DigiCert", "Dec 18, 2026", "46 days", "Active"],
+  ["legacy.keytrace.io", "Infrastructure", "TLS", "Internal CA", "Oct 25, 2026", "8 days ago", "Expired"],
+  ["vpn.keytrace.io", "Security", "mTLS", "Internal CA", "Jan 12, 2027", "71 days", "Active"],
+  ["signing.keytrace.io", "Platform", "Code signing", "DigiCert", "Mar 21, 2027", "139 days", "Active"],
+]
 
-    <script>
-      const certificates = [
-        ["api.keytrace.io", "Platform", "TLS", "DigiCert", "Nov 18, 2026", "16 days", "Expiring soon"],
-        ["payments.keytrace.io", "Payments", "mTLS", "Internal CA", "Dec 04, 2026", "32 days", "Expiring soon"],
-        ["admin.keytrace.io", "Security", "TLS", "Let's Encrypt", "May 09, 2028", "554 days", "Active"],
-        ["mobile.keytrace.io", "Mobile", "TLS", "DigiCert", "Dec 18, 2026", "46 days", "Active"],
-        ["legacy.keytrace.io", "Infrastructure", "TLS", "Internal CA", "Oct 25, 2026", "8 days ago", "Expired"],
-        ["vpn.keytrace.io", "Security", "mTLS", "Internal CA", "Jan 12, 2027", "71 days", "Active"],
-        ["signing.keytrace.io", "Platform", "Code signing", "DigiCert", "Mar 21, 2027", "139 days", "Active"],
-      ]
+const pageNames = { dashboard: "Dashboard", inventory: "Certificate inventory", settings: "Configuration" }
+const sidebar = document.getElementById("sidebar")
+const scrim = document.getElementById("scrim")
 
-      const pageNames = {
-        dashboard: "Dashboard",
-        inventory: "Certificate inventory",
-        settings: "Configuration",
-      }
+function showPage(page) {
+  document.querySelectorAll(".page").forEach((element) => element.classList.toggle("active", element.id === page))
+  document.querySelectorAll(".nav-button[data-page]").forEach((button) => button.classList.toggle("active", button.dataset.page === page))
+  document.getElementById("currentPage").textContent = pageNames[page]
+  sidebar.classList.remove("open")
+  scrim.classList.remove("show")
+  window.scrollTo({ top: 0, behavior: "smooth" })
+}
 
-      function showPage(page) {
-        document.querySelectorAll(".page").forEach((element) => {
-          element.classList.toggle("active", element.id === page)
-        })
-        document.querySelectorAll(".nav-button[data-page]").forEach((button) => {
-          button.classList.toggle("active", button.dataset.page === page)
-        })
-        document.getElementById("currentPage").textContent = pageNames[page]
-        document.getElementById("sidebar").classList.remove("open")
-        document.getElementById("scrim").classList.remove("show")
-        window.scrollTo({ top: 0, behavior: "smooth" })
-      }
+document.querySelectorAll(".nav-button[data-page]").forEach((button) => button.addEventListener("click", () => showPage(button.dataset.page)))
+document.querySelectorAll(".go-inventory").forEach((button) => button.addEventListener("click", () => showPage("inventory")))
+document.getElementById("menuButton").addEventListener("click", () => { sidebar.classList.add("open"); scrim.classList.add("show") })
+scrim.addEventListener("click", () => { sidebar.classList.remove("open"); scrim.classList.remove("show") })
 
-      document.querySelectorAll(".nav-button[data-page]").forEach((button) => {
-        button.addEventListener("click", () => showPage(button.dataset.page))
-      })
+function renderCertificates() {
+  const query = document.getElementById("certificateSearch").value.toLowerCase()
+  const status = document.getElementById("statusFilter").value
+  const type = document.getElementById("typeFilter").value
+  const owner = document.getElementById("ownerFilter").value
+  const filtered = certificates.filter(([name, certOwner, certType, , , , certStatus]) => name.toLowerCase().includes(query) && (!status || certStatus === status) && (!type || certType === type) && (!owner || certOwner === owner))
+  document.getElementById("certificateRows").innerHTML = filtered.map(([name, certOwner, certType, authority, expiry, days, certStatus]) => {
+    const statusClass = certStatus === "Active" ? "active" : certStatus === "Expired" ? "expired" : "expiring"
+    const dayClass = certStatus === "Expired" ? "danger" : certStatus === "Expiring soon" ? "warning" : ""
+    return `<tr><td><input type="checkbox" aria-label="Select ${name}" /></td><td class="certificate-name"><strong>${name}</strong><small>RSA 2048 · SHA-256</small></td><td>${certOwner}</td><td>${certType}</td><td>${authority}</td><td class="expiry"><strong>${expiry}</strong><small class="${dayClass}">${days}</small></td><td><span class="status ${statusClass}">${certStatus}</span></td></tr>`
+  }).join("")
+  document.getElementById("emptyState").style.display = filtered.length === 0 ? "grid" : "none"
+  document.getElementById("resultCount").textContent = `Showing ${filtered.length} certificate${filtered.length === 1 ? "" : "s"}`
+}
 
-      document.querySelectorAll(".go-inventory").forEach((button) => {
-        button.addEventListener("click", () => showPage("inventory"))
-      })
-
-      const sidebar = document.getElementById("sidebar")
-      const scrim = document.getElementById("scrim")
-      document.getElementById("menuButton").addEventListener("click", () => {
-        sidebar.classList.add("open")
-        scrim.classList.add("show")
-      })
-      scrim.addEventListener("click", () => {
-        sidebar.classList.remove("open")
-        scrim.classList.remove("show")
-      })
-
-      function renderCertificates() {
-        const query = document.getElementById("certificateSearch").value.toLowerCase()
-        const status = document.getElementById("statusFilter").value
-        const type = document.getElementById("typeFilter").value
-        const owner = document.getElementById("ownerFilter").value
-        const filtered = certificates.filter(
-          ([name, certOwner, certType, , , , certStatus]) =>
-            name.toLowerCase().includes(query) &&
-            (!status || certStatus === status) &&
-            (!type || certType === type) &&
-            (!owner || certOwner === owner),
-        )
-
-        const rows = document.getElementById("certificateRows")
-        rows.innerHTML = filtered
-          .map(([name, certOwner, certType, authority, expiry, days, certStatus]) => {
-            const statusClass =
-              certStatus === "Active"
-                ? "active"
-                : certStatus === "Expired"
-                  ? "expired"
-                  : "expiring"
-            const dayClass =
-              certStatus === "Expired"
-                ? "danger"
-                : certStatus === "Expiring soon"
-                  ? "warning"
-                  : ""
-            return `<tr>
-              <td><input type="checkbox" aria-label="Select ${name}" /></td>
-              <td class="certificate-name"><strong>${name}</strong><small>RSA 2048 · SHA-256</small></td>
-              <td>${certOwner}</td><td>${certType}</td><td>${authority}</td>
-              <td class="expiry"><strong>${expiry}</strong><small class="${dayClass}">${days}</small></td>
-              <td><span class="status ${statusClass}">${certStatus}</span></td>
-            </tr>`
-          })
-          .join("")
-
-        document.getElementById("emptyState").style.display =
-          filtered.length === 0 ? "grid" : "none"
-        document.getElementById("resultCount").textContent =
-          `Showing ${filtered.length} certificate${filtered.length === 1 ? "" : "s"}`
-      }
-
-      ;["certificateSearch", "statusFilter", "typeFilter", "ownerFilter"].forEach(
-        (id) => document.getElementById(id).addEventListener("input", renderCertificates),
-      )
-
-      document.getElementById("clearFilters").addEventListener("click", () => {
-        document.getElementById("certificateSearch").value = ""
-        document.getElementById("statusFilter").value = ""
-        document.getElementById("typeFilter").value = ""
-        document.getElementById("ownerFilter").value = ""
-        renderCertificates()
-      })
-
-      document.getElementById("discoveryToggle").addEventListener("click", (event) => {
-        event.currentTarget.classList.toggle("off")
-      })
-
-      document.getElementById("saveSettings").addEventListener("click", () => {
-        const toast = document.getElementById("toast")
-        toast.classList.add("show")
-        window.setTimeout(() => toast.classList.remove("show"), 2200)
-      })
-
-      renderCertificates()
-    </script>
-  </body>
+;["certificateSearch", "statusFilter", "typeFilter", "ownerFilter"].forEach((id) => document.getElementById(id).addEventListener("input", renderCertificates))
+document.getElementById("clearFilters").addEventListener("click", () => {
+  document.getElementById("certificateSearch").value = ""
+  document.getElementById("statusFilter").value = ""
+  document.getElementById("typeFilter").value = ""
+  document.getElementById("ownerFilter").value = ""
+  renderCertificates()
+})
+document.getElementById("discoveryToggle").addEventListener("click", (event) => event.currentTarget.classList.toggle("off"))
+document.getElementById("saveSettings").addEventListener("click", () => {
+  const toast = document.getElementById("toast")
+  toast.classList.add("show")
+  window.setTimeout(() => toast.classList.remove("show"), 2200)
+})
+renderCertificates()
+  </script>
+</body>
 </html>
