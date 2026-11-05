@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Search and filter the KeyTrace certificate inventory" />
+    <title>Certificate inventory — KeyTrace</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="inventory">
+    <svg width="0" height="0" style="position: absolute">
+      <symbol id="i-grid" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="7" height="7" rx="1" />
+        <rect x="14" y="3" width="7" height="7" rx="1" />
+        <rect x="3" y="14" width="7" height="7" rx="1" />
+        <rect x="14" y="14" width="7" height="7" rx="1" />
+      </symbol>
+      <symbol id="i-certificate" viewBox="0 0 24 24">
+        <path d="M7 3h10a2 2 0 0 1 2 2v9H5V5a2 2 0 0 1 2-2Z" />
+        <path d="M8 8h8M8 11h5M8 14v7l4-2 4 2v-7" />
+      </symbol>
+      <symbol id="i-file" viewBox="0 0 24 24">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z" />
+        <path d="M14 2v6h6M8 13h8M8 17h5" />
+      </symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24">
+        <path d="M20 7h-5V2M20 7a9 9 0 1 0 1 8" />
+      </symbol>
+      <symbol id="i-alert" viewBox="0 0 24 24">
+        <path d="M10.3 3.4 2.6 17a2 2 0 0 0 1.7 3h15.4a2 2 0 0 0 1.7-3L13.7 3.4a2 2 0 0 0-3.4 0Z" />
+        <path d="M12 9v4M12 17h.01" />
+      </symbol>
+      <symbol id="i-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="7" />
+        <path d="m20 20-4-4" />
+      </symbol>
+      <symbol id="i-settings" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="3" />
+        <path d="M19 12a7 7 0 0 0-.1-1l2-1.5-2-3.5-2.4 1A8 8 0 0 0 15 6l-.4-2.6h-4L10 6a8 8 0 0 0-1.5 1L6 6 4 9.5 6.1 11a7 7 0 0 0 0 2L4 14.5 6 18l2.5-1A8 8 0 0 0 10 18l.5 2.6h4L15 18a8 8 0 0 0 1.5-1l2.5 1 2-3.5-2.1-1.5a7 7 0 0 0 .1-1Z" />
+      </symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16" />
+      </symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24">
+        <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4" />
+      </symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24">
+        <path d="M12 5v14M5 12h14" />
+      </symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 7v5l3 2" />
+      </symbol>
+      <symbol id="i-shield" viewBox="0 0 24 24">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+        <path d="m9 12 2 2 4-4" />
+      </symbol>
+      <symbol id="i-chevron" viewBox="0 0 24 24">
+        <path d="m9 18 6-6-6-6" />
+      </symbol>
+    </svg>
+    <div class="app">
+      <aside class="sidebar" id="sidebar">
+      <a class="brand" href="index.html" style="color:inherit;text-decoration:none"><span class="brand-mark"><i></i><i></i><i></i></span>KeyTrace</a>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav><a class="nav-button" href="index.html"><svg class="icon"><use href="#i-grid"></use></svg>Dashboard</a><a class="nav-button active" href="inventory.html"><svg class="icon"><use href="#i-certificate"></use></svg>Certificate inventory</a><button class="nav-button" type="button"><svg class="icon"><use href="#i-file"></use></svg>Certificate requests</button><button class="nav-button" type="button"><svg class="icon"><use href="#i-refresh"></use></svg>Renewals</button><button class="nav-button" type="button"><svg class="icon"><use href="#i-alert"></use></svg>Alerts <b>4</b></button><button class="nav-button" type="button"><svg class="icon"><use href="#i-file"></use></svg>Reports</button><button class="nav-button" type="button"><svg class="icon"><use href="#i-search"></use></svg>Audit log</button><a class="nav-button" href="settings.html"><svg class="icon"><use href="#i-settings"></use></svg>Configuration</a></nav>
+      <div class="profile"><span class="avatar">AR</span><div><strong>Alex Rivera</strong><span>Administrator</span></div><svg class="icon"><use href="#i-chevron"></use></svg></div>
+    </aside>
+      <main class="main">
+        <header class="topbar">
+      <button class="menu-button" id="menuButton" aria-label="Open menu"><svg class="icon"><use href="#i-menu"></use></svg></button>
+      <div class="topbar-title"><strong>Certificate inventory</strong><span>Production environment</span></div>
+      <div class="top-actions"><div class="global-search"><svg class="icon"><use href="#i-search"></use></svg><span>Search certificates</span><kbd>⌘ K</kbd></div><button class="icon-button" aria-label="Notifications"><svg class="icon"><use href="#i-bell"></use></svg></button></div>
+    </header>
+        <div class="content"><section class="page active" id="inventory"><div class="page-heading">
+              <div>
+                <p class="eyebrow">CERTIFICATES</p>
+                <h1>Certificate inventory</h1>
+                <p>Monitor and manage certificates across your organization.</p>
+              </div>
+              <button class="primary"><svg class="icon"><use href="#i-plus"></use></svg>Add certificate</button>
+            </div>
+            <div class="inventory-summary">
+              <span><strong>1,248</strong> total</span>
+              <span><i class="dot green"></i><strong>1,126</strong> active</span>
+              <span><i class="dot amber"></i><strong>86</strong> expiring soon</span>
+              <span><i class="dot red"></i><strong>14</strong> expired</span>
+            </div>
+            <article class="panel">
+              <div class="filters">
+                <label class="field search-field"><svg class="icon"><use href="#i-search"></use></svg><input id="certificateSearch" placeholder="Search certificates…" /></label>
+                <label class="field"><select id="statusFilter"><option value="">All statuses</option><option>Active</option><option>Expiring soon</option><option>Expired</option></select></label>
+                <label class="field"><select id="typeFilter"><option value="">All types</option><option>TLS</option><option>mTLS</option><option>Code signing</option></select></label>
+                <label class="field"><select id="ownerFilter"><option value="">All owners</option><option>Platform</option><option>Payments</option><option>Security</option><option>Mobile</option><option>Infrastructure</option></select></label>
+                <button class="clear" id="clearFilters">Clear</button>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th><input type="checkbox" /></th><th>Certificate</th><th>Owner</th><th>Type</th><th>Authority</th><th>Expiry</th><th>Status</th></tr></thead>
+                  <tbody id="certificateRows"></tbody>
+                </table>
+                <div class="empty" id="emptyState">No certificates match those filters.</div>
+              </div>
+              <div class="table-footer">
+                <span id="resultCount">Showing 7 certificates</span>
+                <div class="pagination"><button class="active">1</button><button>2</button><button>3</button><button>Next</button></div>
+              </div>
+            </article></section></div>
+      </main>
+      <button class="scrim" id="scrim" aria-label="Close menu"></button>
+      <div class="toast" id="toast">Changes saved successfully.</div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
